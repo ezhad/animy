@@ -1,13 +1,13 @@
 <x-layout>
     <x-slot:heading>
-        {{$title}}
+        Series
     </x-slot:heading>
     <p>Top 10 Series This Month</p>
 
-    @foreach ($shows as $show)
+    @foreach ($series as $aSeries)
         <li>
-            <a href="/series/{{$show['id']}}" class="text-lg">
-                <strong>{{$show['name']}}</strong>
+            <a href="/series/{{$aSeries['id']}}" class="text-lg">
+                <strong>{{$aSeries['title']}}</strong>
             </a>
         </li>
     @endforeach

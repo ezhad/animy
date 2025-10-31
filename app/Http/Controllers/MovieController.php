@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Series;
-class SeriesController extends Controller
+use App\Models\Movie;
+
+class MovieController extends Controller
 {
+
     public function index()
     {
 //        $data = array(
@@ -29,8 +31,9 @@ class SeriesController extends Controller
 //        );
 //        $seriesShow = Arr::first($data['seriesShows'], fn($seriesShow) => $seriesShow['id']==$id);
 
-        $series = Series::all();
-        return view('pages.series')->with('series',$series);
+        $movies = Movie::all();
+
+        return view('pages.movies')->with('movies', $movies);
     }
     public function show($id)
     {
@@ -52,15 +55,13 @@ class SeriesController extends Controller
 //            ]
 //        ];
 
-
         // find the selected show by ID
-        $series = Series::findOrFail($id);
+        $movie = Movie::findOrFail($id);
 
-        if (! $series) {
+        if (! $movie) {
             abort(404);
         }
 
-        return view('pages.series-show')->with('series',$series);
+        return view('pages.movies-show')->with('movie', $movie);
     }
-
 }

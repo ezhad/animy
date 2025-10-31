@@ -1,5 +1,5 @@
 <x-layout heading="Movies Details">
-    <h1 class="text-xl font-bold">Series: {{ $show['name'] }}</h1>
-    <p>Seasons: {{ $show['seasonCount'] }}</p>
-    <p>Description: {{ $show['description'] }}</p>
+    <h1 class="text-xl font-bold">Series: {{ $movie['title'] }}</h1>
+    <p>Seasons: {{ $movie['seasonCount'] }}</p>
+    <p>Description: {{ $movie['description'] }}</p>
 </x-layout>
